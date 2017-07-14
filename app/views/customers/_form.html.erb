@@ -11,17 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Firma Adı</label>
+      <div class="col-sm-10">
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
+        <%= f.text_field :name, class:"form-control", id:"focusedInput", value:"Firma Adını Giriniz..."%><br>
+      </div>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Firma Tanımı</label>
+      <div class="col-sm-10">
+        <%= f.text_field :description, class:"form-control", id:"focusedInput", value:"Firma Tanımı Giriniz..."%><br>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit class:"btn btn-default", value:"Müşteri Oluştur" %>
+    </div>
+  </form>
 <% end %>
