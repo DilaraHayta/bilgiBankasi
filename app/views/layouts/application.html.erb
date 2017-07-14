@@ -28,7 +28,7 @@
             <button type="submit" class="btn btn-default">Ara</button>
           </form>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Kaydol</a></li>
+            <li><%= link_to 'Kaydol', new_user_path%></li>
             <li><a href="#">Oturum Aç</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -37,7 +37,15 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3"></div>
+        <div class="col-sm-3">
+      <ul class="nav nav-pills nav-stacked">
+        <li><%= link_to 'Dashboard', root_path%></li>
+        <li><%= link_to 'Müşteriler', customers_path%></li>
+        <li><a href="#section2">Cihazlar</a></li>
+        <li><a href="#section3">Çözümler</a></li>
+      </ul><br>
+    </div>
+
         <div class="col-sm-9">  <%= yield %> </div>
         </div>
     </div>
