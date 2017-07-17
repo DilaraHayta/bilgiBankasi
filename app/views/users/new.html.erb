@@ -1,5 +1,12 @@
-<h1>New User</h1>
 
-<%= render 'form', user: @user %>
-
-<%= link_to 'Back', users_path %>
+  <div class="well form-horizontal">
+    <fieldset>
+      <legend>
+        <center>
+          <h2><b>Kayıt Ol</b></h2>
+        </center>
+      </legend><br>
+      <%= render 'form', user: @user %>
+      <%= link_to 'Geri', users_path , class:"btn btn-default "%>
+    </fieldset>
+  </div>

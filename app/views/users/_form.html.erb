@@ -11,37 +11,63 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+<div class="form-group">
+  <%= f.label "Ad", class:"col-md-4 control-label"%>
+  <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <%= f.text_field :first_name,class:"form-control" ,placeholder:"Adınız"%>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
+<!-- Text input-->
 
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+<div class="form-group">
+<%= f.label "Soyad", class:"col-md-4 control-label" %>
+  <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <%= f.text_field :last_name,class:"form-control" %>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.text_field :password %>
+<div class="form-group">
+<%= f.label "Parola", class:"col-md-4 control-label" %>
+  <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <%= f.password_field :password,class:"form-control" %>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.text_field :password_confirmation %>
+<div class="form-group">
+<%= f.label "Parola (Tekrar)", class:"col-md-4 control-label" %>
+  <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <%= f.password_field :password_confirmation,class:"form-control" %>
+    </div>
   </div>
+</div>
 
-  <div class="actions">
-    <%= f.submit %>
+<div class="form-group">
+<%= f.label :email, class:"col-md-4 control-label" %>
+  <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <%= f.email_field :email,class:"form-control" %>
+    </div>
   </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+  <%= f.submit "Kayıt Ol", class:"btn btn-warning"%>
+  </div>
+</div>
 <% end %>
