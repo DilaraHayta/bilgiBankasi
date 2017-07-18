@@ -1,0 +1,6 @@
+<%= form_for :session, html: {class: 'form-signin'}, url: session_path do |form| %>
+  <h2 class="form-signin-heading">Oturum Aç</h2><br>
+  <%= form.email_field :e_mail, placeholder: 'E-Posta Adresiniz', class:'form-control', autofocus: true %><br>
+  <%= form.password_field :password, placeholder: 'Parolanız', class:'form-control', autofocus: true %>
+  <%= form.submit 'Oturum Aç',class:"btn btn-lg btn-primary btn-block" %>
+<% end %>
