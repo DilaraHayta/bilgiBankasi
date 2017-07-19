@@ -33,7 +33,7 @@
                 <li><%= current_user.name %></li>
               </button>
               <ul class="dropdown-menu">
-                <li><a href="#">Profilimi Görüntüle</a></li>
+                <li><%= link_to "Profilimi Görüntüle", user_path(current_user) %></li>
                 <li><%= link_to "Oturumu Kapat", logout_path, method: :delete %></li>
               </ul>
             </div>

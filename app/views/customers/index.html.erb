@@ -6,6 +6,7 @@
     <table class="table table-striped">
       <thead>
         <tr>
+          <th>Logo</th>
           <th>Firma</th>
           <th>Tanım</th>
           <th>Sözleşme Yöneticisi</th>
@@ -19,6 +20,7 @@
       <tbody>
         <% @customers.each do |customer| %>
           <tr>
+            <td><%= image_tag customer.logo.url(:medium) %></td>
             <td><%= customer.name %></td>
             <td><%= customer.description %></td>
             <td><%= customer.sozlesme_yoneticisi %></td>
@@ -35,7 +37,4 @@
   </div>
 </div>
 
-
-<br>
-
-<%= link_to 'Müşteri Ekle', new_customer_path, class:'btn btn-default' %>
+<%= link_to 'Müşteri Ekle', new_customer_path, class:'btn btn-default' %><br><br>

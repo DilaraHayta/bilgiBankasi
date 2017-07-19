@@ -13,6 +13,13 @@
 
   <form class="form-horizontal">
     <div class="form-group">
+      <label class="col-sm-2 control-label">Firma Logosu</label>
+      <div class="col-sm-10">
+
+        <%= f.file_field :logo, class:"form-control", id:"focusedInput"%><br> 
+      </div>
+    </div>
+    <div class="form-group">
       <label class="col-sm-2 control-label">Firma Adı</label>
       <div class="col-sm-10">
 
@@ -26,6 +33,44 @@
         <%= f.text_area :description, class:"form-control", id:"focusedInput"%><br>
       </div>
     </div>
+
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Sözleşme Yöneticisi</label>
+        <div class="col-sm-10">
+
+          <%= f.text_field :sozlesme_yoneticisi, class:"form-control", id:"focusedInput"%><br>
+        </div>
+      </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Sözleşme Numarası</label>
+          <div class="col-sm-10">
+
+            <%= f.text_field :sozlesme_no, class:"form-control", id:"focusedInput"%><br>
+          </div>
+        </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Başlangıç Tarihi</label>
+              <div class="col-sm-10">
+
+                <%= f.date_field :sozlesme_baslangıc, class:"form-control", id:"focusedInput"%><br>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Bitiş Tarihi</label>
+              <div class="col-sm-10">
+
+                <%= f.date_field :sozlesme_bitis, class:"form-control", id:"focusedInput"%><br>
+              </div>
+            </div>
+
+
+
+
+
+
 
     <div class="actions">
       <%= f.submit class:"btn btn-default", value:"Müşteri Oluştur" %>
