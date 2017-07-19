@@ -1,13 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <div class="panel panel-default">
-  <div class="panel-heading">Müşteriler</div>
+  <div class="panel-heading"><h4>Müşteriler</h4></div>
   <div class="panel-body">
     <table class="table table-striped">
       <thead>
         <tr>
           <th>Firma</th>
           <th>Tanım</th>
+          <th>Sözleşme Yöneticisi</th>
+          <th>Sözleşme Numarası</th>
+          <th>Başlangıç Tarihi</th>
+          <th>Bitiş Tarihi</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -17,6 +21,10 @@
           <tr>
             <td><%= customer.name %></td>
             <td><%= customer.description %></td>
+            <td><%= customer.sozlesme_yoneticisi %></td>
+            <td><%= customer.sozlesme_no %></td>
+            <td><%= customer.sozlesme_baslangıc %></td>
+            <td><%= customer.sozlesme_bitis %></td>
             <td><%= link_to 'İncele', customer %></td>
             <td><%= link_to 'Düzenle', edit_customer_path(customer) %></td>
             <td><%= link_to 'Sil', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

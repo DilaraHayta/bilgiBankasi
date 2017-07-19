@@ -1,10 +1,10 @@
-<%= form_for(user) do |f| %>
-  <% if user.errors.any? %>
+<%= form_for @user, url: users_path  do |f| %>
+  <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(@user .errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
-      <% user.errors.full_messages.each do |message| %>
+      <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -29,6 +29,17 @@
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
       <%= f.text_field :last_name,class:"form-control",placeholder:"Soyadınız" %>
+    </div>
+  </div>
+</div>
+
+
+<div class="form-group">
+<%= f.label "Soyad", class:"col-md-4 control-label" %>
+  <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <%= f.file_field :avatar,class:"form-control",placeholder:"Soyadınız" %>
     </div>
   </div>
 </div>
@@ -68,7 +79,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4"><br>
-  <%= f.submit "Kayıt Ol", class:"btn btn-warning"%>
+    <%= f.submit "Kayıt Ol", class:"btn btn-warning"%>
   </div>
 </div>
 <% end %>

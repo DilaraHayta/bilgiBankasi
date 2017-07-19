@@ -1,9 +1,10 @@
 <div class="jumbotron">
     <p id="notice"><%= notice %></p>
-    <h2><%= @user.name %></h2>
-    <h3><%= @user.email %></h3><br>
+    <h2><%= current_user.name %></h2>
+    <h3><%= current_user.email %></h3><br>
+    <%= image_tag current_user.avatar.url(:medium) %>
 
-    <%= link_to 'Profilimi Düzenle', edit_user_path(@user), class:"btn btn-primary" %>
-    <%= link_to 'Hesabımı Sil', @user , class:"btn btn-danger", method: :delete, data:{confirm:"Hesabınızı silmek istediğinizden emin misisniz?"}%>
+    <%= link_to 'Profilimi Düzenle', edit_user_path(current_user), class:"btn btn-primary" %>
+    <%= link_to 'Hesabımı Sil', current_user , class:"btn btn-danger", method: :delete, data:{confirm:"Hesabınızı silmek istediğinizden emin misisniz?"}%>
 
 </div>

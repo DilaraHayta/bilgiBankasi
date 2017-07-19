@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :select_user, only: [:show, :edit, :update, :destroy]
+  before_action only: [:edit, :update, :destroy] do
+    validate_permission! select_user
+  end
 
   # GET /users
   # GET /users.json
@@ -25,10 +28,9 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
       if @user.save
-        flash[:notice] = "Aramıza Hoşgeldin!"
-        redirect_to @user
+        login(@user)
+        redirect_to @user, notice: 'Aramıza hoş geldin!'
       else
         render :new
     end
@@ -51,21 +53,20 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    logout
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to register_path, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to root_url
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit!
+      params.require(:user).permit(:first_name,:last_name,:password,:email,:avatar)
     end
+
+    def select_user
+    @user = User.find_by_email(params[:id])
+  end
 end
