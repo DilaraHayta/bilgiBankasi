@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:session][:e_mail])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to root_url, notice: 'Oturum Açıldı.'
+      redirect_to customers_path, notice: 'Oturum Açıldı.'
     else
       flash.now[:error] = "Kullanıcı adı/parola hatalı."
       redirect_to login_url
@@ -14,5 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    logout
+   redirect_to root_url, notice: 'Oturumunuz sonlandırıldı.'
   end
 end
