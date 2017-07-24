@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cihaz_tipi: 1
+  marka: MyString
+  model: MyString
+
+two:
+  cihaz_tipi: 1
+  marka: MyString
+  model: MyString

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :devices
   get '/oturum_ac', to: 'sessions#new', as: :login
   delete '/oturumu_kapat', to: 'sessions#destroy', as: :logout
   resource :session, only: :create

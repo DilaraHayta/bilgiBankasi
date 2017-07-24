@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cihaz tipi:</strong>
+  <%= @device.cihaz_tipi %>
+</p>
+
+<p>
+  <strong>Marka:</strong>
+  <%= @device.marka %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @device.model %>
+</p>
+
+<%= link_to 'Edit', edit_device_path(@device) %> |
+<%= link_to 'Back', devices_path %>
