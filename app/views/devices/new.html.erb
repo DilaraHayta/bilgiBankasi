@@ -1,5 +1,7 @@
-<h1>New Device</h1>
-
-<%= render 'form', device: @device %>
-
-<%= link_to 'Back', devices_path %>
+<div class="panel panel-default">
+    <div class="panel-body">
+      <h1>Cihaz Ekle</h1><br>
+      <%= render 'form' , device: @device %>
+      <%= link_to 'Geri', devices_path ,  class:"btn btn-default"%>
+    </div>
+</div>

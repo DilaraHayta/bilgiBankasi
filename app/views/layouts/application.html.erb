@@ -59,7 +59,7 @@ $(document).ready(function(){
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="link">Cihazlar</a>
                 <div id="collapse3" class="panel-collapse collapse">
                   <div class="panel-body">
-                    <ul style="list-style-type:none">
+                    <ul>
                       <%  Device.uniq.pluck(:cihaz_tipi).each do |device| %>
                       <li> <%= link_to device , devices_path%></li>
                       <% end %>

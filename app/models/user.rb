@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  has_attached_file :avatar, styles: { medium: "30x30>", thumb: "10x10>" }
+  has_attached_file :avatar
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
 

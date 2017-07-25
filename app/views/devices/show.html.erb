@@ -1,19 +1,43 @@
 <p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <div class="panel-heading"><strong>Cihaz Detayları</strong></div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Marka</th>
+          <th>Model</th>
+          <th>Cihaz Tipi</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @device.marka%></td>
+          <td><%= @device.model %></td>
+          <td><%= @device.cihaz_tipi%></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-<p>
-  <strong>Cihaz tipi:</strong>
-  <%= @device.cihaz_tipi %>
-</p>
 
-<p>
-  <strong>Marka:</strong>
-  <%= @device.marka %>
-</p>
 
-<p>
-  <strong>Model:</strong>
-  <%= @device.model %>
-</p>
 
-<%= link_to 'Edit', edit_device_path(@device) %> |
-<%= link_to 'Back', devices_path %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= link_to 'Düzenle', edit_device_path(@device),class:"btn btn-default" %>
+<%= link_to 'Geri', devices_path,class:"btn btn-default" %>
