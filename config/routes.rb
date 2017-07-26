@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :devices
-  get '/oturum_ac', to: 'sessions#new', as: :login
+  get  'sessions/new', as: :login
   delete '/oturumu_kapat', to: 'sessions#destroy', as: :logout
   resource :session, only: :create
 
@@ -13,10 +13,13 @@ Rails.application.routes.draw do
 
 
 
+
+
+
   resources :customers
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'users#new'
+  root 'sessions#new'
 
 
 end

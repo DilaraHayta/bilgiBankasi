@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   before_action :select_user, only: [:show, :edit, :update, :destroy]
-  before_action only: [:edit, :update, :destroy] do
-    validate_permission! select_user
-  end
+
 
   # GET /users
   # GET /users.json
@@ -23,6 +21,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    render :edit
 
   end
 
@@ -32,7 +31,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
       if @user.save
         login(@user)
-        redirect_to @user, notice: 'Aramıza hoş geldin!'
+        redirect_to user_path(@user), notice: 'Aramıza hoş geldin!'
       else
         render :new
     end
@@ -41,10 +40,14 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    if @user.update_attributes(user_params)
-      # Handle a successful update.
-    else
-      render 'edit'
+    respond_to do |format|
+      if current_user.update(user_params)
+        format.html { redirect_to current_user, notice: 'Customer was successfully updated.' }
+        format.json { render :show, status: :ok, location: current_user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -61,7 +64,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name,:last_name,:password,:email,:avatar)
+      params.require(:user).permit!
     end
 
     def select_user
