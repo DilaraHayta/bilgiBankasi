@@ -11,7 +11,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
 $(document).ready(function(){
-    $(".link").click(function(){
+    $().click(function(){
+        $(".collapse").collapse('toggle');
+    });
+    $(".btn btn-primary").click(function(){
         $(".collapse").collapse('toggle');
     });
 });
@@ -20,7 +23,7 @@ $(document).ready(function(){
 
   <body>
     <% if signed_in?%>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" >
       <div class="container-fluid">
         <div class="navbar-header" >
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"></button>
@@ -58,7 +61,7 @@ $(document).ready(function(){
               <li><%= link_to 'Dashboard', customers_path%></li>
               <li><%= link_to 'Müşteriler', customers_path%></li>
               <li>
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="link">Cihazlar</a>
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Cihazlar</a>
                 <div id="collapse3" class="panel-collapse collapse">
                   <div class="panel-body">
                     <ul>

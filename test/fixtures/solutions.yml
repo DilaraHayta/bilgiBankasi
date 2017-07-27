@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sol_type: MyString
+  title: MyString
+  body: MyString
+  version: MyString
+  customer: one
+  device: 
+
+two:
+  sol_type: MyString
+  title: MyString
+  body: MyString
+  version: MyString
+  customer: two
+  device: 

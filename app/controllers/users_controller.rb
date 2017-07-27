@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    render :edit
+
 
   end
 
@@ -42,10 +42,10 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if current_user.update(user_params)
-        format.html { redirect_to current_user, notice: 'Customer was successfully updated.' }
+        format.html { redirect_to current_user, notice: 'Profiliniz başarıyla güncellenmiştir.' }
         format.json { render :show, status: :ok, location: current_user }
       else
-        format.html { render :edit }
+        format.html { redirect_to user_path(current_user), notice: 'Profil güncelleme başarısız.'  }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
