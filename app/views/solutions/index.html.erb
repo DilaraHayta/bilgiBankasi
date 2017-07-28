@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-default">
+  <div class="panel-heading"><h4>Çözümler</h4></div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Versiyon</th>
+          <th>Çözüm Tipi</th>
+          <th>Ait Olduğu Müşteri</th>
+          <th>Cihaz Tipi</th>
+          <th>Çözüm Başlığı</th>
+          <th>Çözüm Açıklaması</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @solutions.each do |solution| %>
+          <tr>
+            <td><%= solution.version %></td>
+            <td><%= solution.sol_type %></td>
+            <td><%= solution.customer.name %></td>
+            <td><%= solution.device.cihaz_tipi %></td>
+            <td><%= solution.title %></td>
+            <td><%= solution.body %></td>
+            <td><%= link_to 'İncele', solution %></td>
+            <td><%= link_to 'Düzenle', edit_solution_path(solution) %></td>
+            <td><%= link_to 'Sil', solution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%= link_to 'Çözüm Ekle', new_solution_path,class:"btn btn-default" %>
