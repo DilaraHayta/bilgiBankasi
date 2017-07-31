@@ -27,7 +27,7 @@
     <div class="form-group">
       <label class="col-sm-2 control-label">Ait Olduğu Müşteri</label>
       <div class="col-sm-10">
-        <%= f.collection_select :customer_id, Customer.all , :id, :name , class:"form-control" , id:"focusedInput",
+        <%= f.collection_select :customer_id, Customer.select(:name).uniq , :id, :name , class:"form-control" , id:"focusedInput",
                                                                             prompt:"Müşteri Seçiniz.." %><br>
       </div>
     </div>
@@ -35,7 +35,7 @@
     <div class="form-group">
       <label class="col-sm-2 control-label">Cihaz Tipi</label>
       <div class="col-sm-10">
-        <%= f.collection_select :device_id, Device.all , :id, :cihaz_tipi , class:"form-control", id:"focusedInput",
+        <%= f.collection_select :device_id, Device.select(:cihaz_tipi).uniq , :id, :cihaz_tipi , class:"form-control", id:"focusedInput",
                                                                             prompt:"Cihaz Tipi Seçiniz.."%><br>
       </div>
     </div>
