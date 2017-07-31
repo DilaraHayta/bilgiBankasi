@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_attached_file :avatar
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
+  has_many :comments, dependent: :destroy
+
 
 
   validates :first_name, presence: true
