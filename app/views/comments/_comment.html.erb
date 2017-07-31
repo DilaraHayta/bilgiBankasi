@@ -1,0 +1,18 @@
+  <!-- Left-aligned media object -->
+  <div class="media">
+    <div class="media-left">
+      <%= image_tag current_user.avatar.url, class:"img-circle avatar avatar-original", style:"-webkit-user-select:none;
+      display:block; margin:auto;", size:"70x70"%>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><%= comment.body %></h4>
+      <p><%= link_to_if comment.user == current_user, comment.user.name, user_path(comment.user) %> tarafından
+      <%= time_ago_in_words comment.created_at %> önce gönderildi.
+
+      <% if current_user == comment.user %>
+        <%= link_to 'Yorum Düzenle', edit_comment_path(comment), class:"btn btn-warning pull-right" %>  
+        <%= link_to 'Sil', comment, method: :delete,class:"btn btn-danger pull-right" %>
+      <%end%></p>
+    </div>
+
+  <hr>

@@ -36,5 +36,12 @@
   </div>
 </div>
 
+<div>
+  <h2>Yorumlar(<%= @solution.comments.count %>)</h2><hr>
+  <%= render @solution.comments %>
+</div>
+
+
+<%= link_to 'Yorum Ekle', new_solution_comment_path(@solution) , class:"btn btn-primary" if signed_in?%>
 <%= link_to 'Düzenle', edit_solution_path(@solution) , class:"btn btn-default"%>
 <%= link_to 'Geri', solutions_path, class:"btn btn-default" %>

@@ -17,7 +17,12 @@ Rails.application.routes.draw do
 
 
   resources :customers
-  resources :solutions
+  resources :solutions do
+    resources :comments, only:[:new, :create]
+  end
+
+
+  resources :comments, only: [:edit, :update, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'sessions#new'

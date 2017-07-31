@@ -1,0 +1,9 @@
+<%= form_for  [@solution,@comment] do |form| %>
+<div class="panel panel-default">
+  <div class="panel-heading">Çözüme yorum yapın.</div>
+  <div class="panel-body">
+    <%= form.text_area :body, class:'form-control'%><br>
+    <%= form.submit 'Yorum Yap' , class:'btn btn-default' %>
+  </div>
+</div>
+<% end %>
