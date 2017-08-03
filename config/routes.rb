@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   resources :devices
   get  'sessions/new', as: :login
   delete '/oturumu_kapat', to: 'sessions#destroy', as: :logout
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
   get '/kaydol', to: 'users#new', as: :register
 
 
+    resources :password_resets
 
 
 

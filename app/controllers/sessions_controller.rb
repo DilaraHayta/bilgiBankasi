@@ -15,6 +15,6 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-   redirect_to root_url, notice: 'Oturumunuz sonlandırıldı.'
+    redirect_to root_url, notice: 'Oturumunuz sonlandırıldı.'
   end
 end

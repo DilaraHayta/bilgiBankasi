@@ -2,5 +2,6 @@
   <h2 class="form-signin-heading">Oturum Aç</h2><br>
   <%= form.email_field :e_mail, placeholder: 'E-Posta Adresiniz', class:'form-control', autofocus: true %><br>
   <%= form.password_field :password, placeholder: 'Parolanız', class:'form-control', autofocus: true %>
-  <%= form.submit 'Oturum Aç',class:"btn btn-lg btn-primary btn-block" %>
+  <%= form.submit 'Oturum Aç',class:"btn btn-lg btn-primary btn-block" %><br>
+  <p><%= link_to "Şifremi Unuttum", new_password_reset_path %></p>
 <% end %>
