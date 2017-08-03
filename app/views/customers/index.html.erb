@@ -1,5 +1,17 @@
 <p id="notice"><%= notice %></p>
+<div class="alert alert-info">
+  <strong>Bilgi!</strong> Müşteri ismi, Sözleşme yöneticisi ve Sözleşme Numarasına göre arama yapılabilir.
+</div>
 
+<%= form_tag customers_path, :method => 'get', class:"navbar-form navbar-left" do %>
+
+
+  <div class="form-group">
+    <%= text_field_tag :search, params[:search], class: "form-control", placeholder:"Arama..."%>
+  </div>
+  <%= submit_tag "Ara", :name => nil, class:"btn btn-default" %>
+
+<%end%>
 <div class="panel panel-default">
   <div class="panel-heading"><h4>Müşteriler</h4></div>
   <div class="panel-body">
