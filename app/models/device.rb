@@ -9,4 +9,8 @@ class Device < ApplicationRecord
   def uppercase_fields
     self.cihaz_tipi.upcase!
   end
+
+  def self.search(search)
+    where("lower(cihaz_tipi) LIKE ? OR lower(marka) LIKE ? OR lower(model) LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+  end
 end
