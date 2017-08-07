@@ -27,7 +27,7 @@ $(document).ready(function(){
       <div class="container-fluid">
         <div class="navbar-header" >
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"></button>
-            <%= link_to 'KoçSistem Bilgi Bankası', customers_path, :class => 'navbar-brand'%>
+            <%= link_to 'KoçSistem Bilgi Bankası', root_path, :class => 'navbar-brand'%>
 
         </div>
 
@@ -53,7 +53,7 @@ $(document).ready(function(){
         <div class="row">
           <div class="col-sm-2" >
             <ul class="nav nav-pills nav-stacked">
-              <li><%= link_to 'Dashboard', customers_path%></li>
+              <li><%= link_to 'Dashboard', root_path%></li>
               <li><%= link_to 'Müşteriler', customers_path%></li>
               <li><%= link_to 'Cihazlar', devices_path%></li>
               <li><%= link_to 'Çözümler' , solutions_path%></li>
@@ -71,7 +71,7 @@ $(document).ready(function(){
         <div class="container-fluid">
           <div class="navbar-header" >
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"></button>
-              <%= link_to 'KoçSistem Bilgi Bankası', root_path, :class => 'navbar-brand'%>
+              <%= link_to 'KoçSistem Bilgi Bankası', login_path, :class => 'navbar-brand'%>
           </div>
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

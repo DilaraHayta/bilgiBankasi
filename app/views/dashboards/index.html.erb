@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-sm-12">
+    <%= image_tag  ("koc4.jpg"), style:"height:300px; width:100%"%>
+  </div>
+</div>
+
+<br>
+
+<div class="col-sm-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Duyurular</h3>
+    </div>
+    <div class="panel-body">
+      Panel content
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-sm-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Son Yorumlar</h3>
+    </div>
+    <div class="panel-body">
+      <% Comment.all.each do |c|%>
+        <%= c.body %><br>
+        <%= c.user.name %><br><hr>
+      <% end%>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Detaylı Arama</h3>
+    </div>
+    <div class="panel-body">
+      Panel content
+    </div>
+  </div>
+</div>
