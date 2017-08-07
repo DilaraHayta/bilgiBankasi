@@ -24,7 +24,7 @@
     <div class="panel-heading">
       <h3 class="panel-title">Son Yorumlar</h3>
     </div>
-    <div class="panel-body">
+    <div class="panel-body" style="height:200px; overflow-y: scroll">
       <% Comment.all.each do |c|%>
         <%= c.body %><br>
         <%= c.user.name %><br><hr>
