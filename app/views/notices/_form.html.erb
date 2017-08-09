@@ -1,0 +1,34 @@
+<%= form_for @notice , html: { class: 'form-horizontal' } do |f| %>
+  <% if notice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(notice.errors.count, "error") %> prohibited this notice from being saved:</h2>
+
+      <ul>
+      <% notice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="form-group">
+    <%= f.label :title ,'Duyuru Başlığı',class:"control-label col-sm-2"%>
+    <div class="col-sm-9">
+    <%= f.text_field :title, class:"form-control" %>
+    </div>
+  </div> <br>
+
+  <div class="form-group">
+    <%= f.label :body ,"Duyuru Açıklaması",class:"control-label col-sm-2"%>
+    <div class="col-sm-9">
+    <%= f.text_area :body, class:"form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit "Ekle", class:'btn btn-default'%>
+    </div>
+  </div>
+<% end %>

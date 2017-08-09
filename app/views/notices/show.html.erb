@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+  <%= @notice.body %></div>
+  <div class="panel-body"><%= @notice.title %></div>
+</div>
+
+<%= link_to 'Düzenle', edit_notice_path(@notice) , class:"btn btn-default"%>
+<%= link_to 'Geri',{controller: "dashboards", action: "index"} , class:"btn btn-default" %>

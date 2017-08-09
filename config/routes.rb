@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :notices
   resources :devices
   get  'sessions/new', as: :login
   delete '/oturumu_kapat', to: 'sessions#destroy', as: :logout

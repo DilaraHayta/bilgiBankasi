@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Duyurular</h1> <br>
+
+
+<div class="panel panel-default">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Başlık</th>
+        <th>Detay</th>
+        <th>Oluşturulan Tarih</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @notices.each do |notice| %>
+      <tr>
+        <td><%= notice.body %></td>
+        <td><%= notice.title %></td>
+        <td><%= notice.created_at.to_formatted_s(:short) %></td>
+        <td><%= link_to 'İncele', notice %></td>
+        <td><%= link_to 'Düzenle', edit_notice_path(notice) %></td>
+        <td><%= link_to 'Sil', notice, method: :delete, data: { confirm: 'Silinme İşlemini Onaylıyor Musunuz?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<%= link_to 'Yeni Duyuru Ekle', new_notice_path, class:"btn btn-default" %>

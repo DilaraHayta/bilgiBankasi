@@ -1,0 +1,6 @@
+<h1 style="text-align:center">Düzenle</h1><br>
+
+<%= render 'form', notice: @notice %><br><hr>
+
+<%= link_to 'İncele', @notice,class:"btn btn-default" %>
+<%= link_to 'Geri',{ controller: "dashboards", action: "index"} , class:"btn btn-default"%>
