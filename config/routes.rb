@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-
+  resources :searches
   resources :notices
   resources :devices
   get  'sessions/new', as: :login

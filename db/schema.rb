@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170809103529) do
+ActiveRecord::Schema.define(version: 20170809153448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,16 @@ ActiveRecord::Schema.define(version: 20170809103529) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "searches", force: :cascade do |t|
+    t.string   "keywords"
+    t.integer  "device_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "customer_id"
+    t.index ["customer_id"], name: "index_searches_on_customer_id", using: :btree
+    t.index ["device_id"], name: "index_searches_on_device_id", using: :btree
+  end
+
   create_table "solutions", force: :cascade do |t|
     t.string   "sol_type"
     t.string   "title"
@@ -86,5 +96,7 @@ ActiveRecord::Schema.define(version: 20170809103529) do
 
   add_foreign_key "comments", "solutions"
   add_foreign_key "comments", "users"
+  add_foreign_key "searches", "customers"
+  add_foreign_key "searches", "devices"
   add_foreign_key "solutions", "customers"
 end
